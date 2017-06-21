@@ -1,4 +1,4 @@
-this.j$ = this.jStat = (function(Math, undefined) {
+var jStat = (function(Math, undefined) {
 
 // For quick reference.
 var concat = Array.prototype.concat;
@@ -674,3 +674,5 @@ jProto.alter = function alter(func) {
 return jStat;
 
 }(Math));
+
+export {jStat};
