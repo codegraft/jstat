@@ -1,5 +1,3 @@
-var jStat = (function(Math, undefined) {
-
 // For quick reference.
 var concat = Array.prototype.concat;
 var slice = Array.prototype.slice;
@@ -36,7 +34,7 @@ function toVector(arr) {
 
 
 // The one and only jStat constructor.
-function jStat() {
+export function jStat() {
   return new jStat._init(arguments);
 }
 
@@ -670,9 +668,3 @@ jProto.alter = function alter(func) {
 })('create zeros ones rand identity'.split(' '));
 
 
-// Exposing jStat.
-return jStat;
-
-}(Math));
-
-export {jStat};

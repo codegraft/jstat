@@ -1,5 +1,3 @@
-var jStat = (function(Math, undefined) {
-
 // For quick reference.
 var concat = Array.prototype.concat;
 var slice = Array.prototype.slice;
@@ -36,7 +34,7 @@ function toVector(arr) {
 
 
 // The one and only jStat constructor.
-function jStat() {
+export function jStat() {
   return new jStat._init(arguments);
 }
 
@@ -670,12 +668,6 @@ jProto.alter = function alter(func) {
 })('create zeros ones rand identity'.split(' '));
 
 
-// Exposing jStat.
-return jStat;
-
-}(Math));
-
-export {jStat};
 (function(jStat, Math) {
 
 var isFunction = jStat.utils.isFunction;
@@ -1225,7 +1217,7 @@ var jProto = jStat.prototype;
   })(funcs[i]);
 })('quantiles percentileOfScore'.split(' '));
 
-}(this.jStat, Math));
+}(jStat, Math));
 // Special functions //
 (function(jStat, Math) {
 
@@ -1693,7 +1685,7 @@ jStat.randg = function randg(shape, n, m) {
   })(funcs[i]);
 })('randn'.split(' '));
 
-}(this.jStat, Math));
+}(jStat, Math));
 (function(jStat, Math) {
 
 // generate all distribution instance methods
@@ -3210,7 +3202,7 @@ jStat.extend(jStat.tukey, {
   }
 });
 
-}(this.jStat, Math));
+}(jStat, Math));
 /* Provides functions for the solution of linear system of equations, integration, extrapolation,
  * interpolation, eigenvalue problems, differential equations and PCA analysis. */
 
@@ -4231,7 +4223,7 @@ jStat.extend({
   }(funcs[i]));
 }('add divide multiply subtract dot pow exp log abs norm angle'.split(' ')));
 
-}(this.jStat, Math));
+}(jStat, Math));
 (function(jStat, Math) {
 
 var slice = [].slice;
@@ -4574,8 +4566,8 @@ jStat.extend(jStat.fn, {
   }
 });
 
-}(this.jStat, Math));
-this.jStat.models=(function(){
+}(jStat, Math));
+jStat.models=(function(){
 
   function sub_regress(endog, exog) {
     return ols(endog, exog);

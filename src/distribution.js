@@ -1514,4 +1514,4 @@ jStat.extend(jStat.tukey, {
   }
 });
 
-}(this.jStat, Math));
+}(jStat, Math));
